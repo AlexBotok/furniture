@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./parts/linkico.ejs")  %>
+    <title>Furniture | <%= title %></title>
+    <link rel="stylesheet" href="/public/styles/reset.css">
+    <link rel="stylesheet" href="/public/styles/header.css">
+    <link rel="stylesheet" href="/public/styles/stylesofas.css">
+    <link rel="stylesheet" href="/public/styles/footer.css">
+</head>
+<body>
+    <%- include("./parts/header.ejs")  %>
+    <section class="section" id="section">
+        <hr>
+        <div class="container">
+            <h1 class="divani">ДИВАНИ</h1>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="flex">
+                <div class="filter">
+                    <div class="filterosnova">
+                        <p>Фільтр</p>
+                        <svg class="filtersvg">
+                            <use href="#filtersvg"></use>
+                        </svg>
+                    </div>
+                    <div class="linef1"></div>
+                    <div class="filter1" id="f0">
+                        <div class="filflex">
+                            <p>Виробник</p>
+                            <svg class="filtersvg">
+                                <use href="#buttondown1"></use>
+                            </svg>
+                        </div>
+                        <div class="filflex1">
+                            <!-- <div id="f0f" class="inviz" checked="false">AmbasaDoor</div>
+                            <div class="checkbox"><img src="/public/img/true.svg" alt="true"></div> -->
+                        </div>
+
+                    </div>
+                    <div class="filter1" id="f1">
+                        <div class="filflex">
+                            <p>Механізм</p>
+                            <svg class="filtersvg">
+                                <use href="#buttondown1"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter1" id="f2">
+                        <div class="filflex">
+                            <p>Наповнювач</p>
+                            <svg class="filtersvg">
+                                <use href="#buttondown1"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter1" id="f3">
+                        <div class="filflex">
+                            <p>Каркас</p>
+                            <svg class="filtersvg">
+                                <use href="#buttondown1"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter1" id="f4">
+                        <div class="filflex">
+                            <p>Короб</p>
+                            <svg class="filtersvg">
+                                <use href="#buttondown1"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter1" id="f5">
+                        <div class="filflex">
+                            <p>Місто</p>
+                            <svg class="filtersvg">
+                                <use href="#buttondown1"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="filter1" id="f6">
+                        <div class="filflex">
+                            <p>Ціна</p>
+                            <svg class="filtersvg">
+                                <use href="#buttondown1"></use>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="productsofa">
+                    <% for(i = 0; i < product.length; i++) { %>
+                    <% if (product[i].type == "Диван") { %>
+                    <div class="goods1">
+                        <a href="sofas/<%= product[i].id %>" class="agoods">
+                            <div><img class="imageproduct" src="<%= product[i].imgsrc %>"></div>
+                            <div><%= product[i].name %></div>
+                            <div><%= product[i].title %></div>
+                            <div class="price"><%= product[i].price %>₴</div>
+                            <div class="instock">В наявності:<%= product[i].instock %></div>
+                        </a>
+                        <button class="cart" id="<%= product[i].id %>">Додати в кошик</button>
+                    </div>
+                    <% } %>
+                    <% } %>
+                </div>
+                <div id="notification-container"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <%- include("./parts/svg.ejs")  %>
+    <%- include("./parts/footer.ejs")  %>
+    <script src="/public/storage.js"></script>
+    <script src="/public/hovphone.js"></script>
+    <script src="/public/notification.js"></script>
+    <script src="/public/filter.js"></script>
+</body>
+
+</html>

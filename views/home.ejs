@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%- include("./parts/linkico.ejs")  %>
+    <title>Furniture | <%= title %></title>
+    <link rel="stylesheet" href="/public/styles/reset.css">
+    <link rel="stylesheet" href="/public/styles/header.css">
+    <link rel="stylesheet" href="/public/styles/stylehome.css">
+    <link rel="stylesheet" href="/public/styles/footer.css">
+</head>
+
+<body>
+    <%- include("./parts/header.ejs")  %>
+    <section class="section" id="section">
+        <div class="container">
+            <div class="sect1">
+                <div class="rect"></div>
+                <div class="rect1">
+                    <p class="rect1_1">Новинка!</p>
+                    <p class="rect1_2" id="rect1_2">Ліжко Ornella</p>
+                    <p class="rect1_3">Це новий рівень комфортного сну</p>
+                    <a href="#">
+                        <div class="rect1_4">
+                            <p>Детальніше</p>
+                        </div>
+                    </a>
+                    <div class="numberp1">
+                        <p id="numliz">01</p>
+                        <p>/ 04</p>
+                    </div>
+                    <div class="sect1_buttons">
+                        <a href="leftb" onclick="return false;">
+                            <div class="leftbdiv" id="sect1_leftb">
+                                <svg class="leftb">
+                                    <use href="#button"></use>
+                                </svg>
+                                <svg class="leftb_hov">
+                                    <use href="#leftb_hov"></use>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="rightb" onclick="return false;">
+                            <div class="leftbdiv" id="sect1_rightb">
+                                <svg class="leftb">
+                                    <use href="#button"></use>
+                                </svg>
+                                <svg class="leftb_hov">
+                                    <use href="#rightb_hov"></use>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="nn"></div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="sect2_1">
+            <div class="sect2">
+                <div class="rect3"></div>
+                <p>Наші переваги</p>
+            </div>
+        </div>
+        <div class="sect3">
+            <a href="leftb" onclick="return false;">
+                <div class="leftbdiv_1" id="leftbsli">
+                    <svg class="leftb_1">
+                        <use href="#button"></use>
+                    </svg>
+                    <svg class="leftb_hov_1">
+                        <use href="#leftb_hov"></use>
+                    </svg>
+                </div>
+            </a>
+            <a href="rightb" onclick="return false;">
+                <div class="rightbdiv_2" id="rightbsli">
+                    <svg class="leftb_1">
+                        <use href="#button"></use>
+                    </svg>
+                    <svg class="leftb_hov_1">
+                        <use href="#rightb_hov"></use>
+                    </svg>
+                </div>
+            </a>
+            <div class="sliderleft">
+                <div class="slider" id="slider">
+                    <div class="sect3_1">
+                        <img src="/public/img/team.png" alt="team">
+                        <div class="rect4"></div>
+                        <p>Професійний підхід</p>
+                    </div>
+                    <div class="sect3_1">
+                        <img src="/public/img/perevagi1.png" alt="perevagi1">
+                        <div class="rect4"></div>
+                        <p>Меблі преміум класу</p>
+                    </div>
+                    <div class="sect3_1_1">
+                        <img src="/public/img/perevagi2.png" alt="perevagi2">
+                        <p>Надійність</p>
+                        <h6 class="sect3_1p">За 14 років на ринку меблів для дому ми стали надійними партнерами на ринку
+                            Вінницької області та України</h6>
+                    </div>
+                    <div class="sect3_1_2">
+                        <img src="/public/img/perevagi3.png" alt="perevagi3">
+                        <p>Безкоштовна доставка</p>
+                    </div>
+                    <div class="sect3_1">
+                        <img src="/public/img/perevagi5.png" alt="perevagi5">
+                        <div class="rect4"></div>
+                        <p>Низькі ціни</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sect4">
+            <div class="sect4_1">
+                <div class="rect3"></div>
+                <p>Категорії товарів</p>
+            </div>
+            <div class="sect4_2">
+                <div class="sect4_svg">
+                    <a href="/sofas" id="trig">
+                        <svg class="r4svg">
+                            <use href="#divani"></use>
+                        </svg>
+                    </a>
+                    <a href="/sofas">
+                        <p id="trigp" class="sect4p">Дивани</p>
+                    </a>
+                </div>
+                <div class="sect4_svg">
+                    <a href="#" id="trig"><svg class="r4svg">
+                            <use href="#lijka"></use>
+                        </svg></a>
+                    <a href="#">
+                        <p id="trigp" class="sect4p">Ліжка</p>
+                    </a>
+                </div>
+
+                <div class="sect4_svg">
+                    <a href="#" id="trig"><svg class="r4svg">
+                            <use href="#krisla"></use>
+                        </svg></a>
+                    <a href="#">
+                        <p id="trigp" class="sect4p">Крісла</p>
+                    </a>
+                </div>
+                <div class="sect4_svg">
+                    <a href="#" id="trig">
+                        <svg class="r4svg">
+                            <use href="#komodi"></use>
+                        </svg>
+                    </a>
+                    <a href="#">
+                        <p id="trigp" class="sect4p">Комоди</p>
+                    </a>
+                </div>
+                <div class="sect4_svg">
+                    <a href="#" id="trig"><svg class="r4svg">
+                            <use href="#shafi"></use>
+                        </svg></a>
+                    <a href="#">
+                        <p id="trigp" class="sect4p">Шафи</p>
+                    </a>
+                </div>
+                <div class="sect4_svg">
+                    <a href="#" id="trig"><svg class="r4svg">
+                            <use href="#kuhnia"></use>
+                        </svg></a>
+                    <a href="#">
+                        <p id="trigp" class="sect4p">Кухня</p>
+                    </a>
+                </div>
+            </div>
+            <div class="sect4__2">
+                <div id="trig_ligko">
+                    <a href="/sofas/1">
+                        <div class="sect4__300">
+                            <div class="rect4__2">
+                                <p>Новинка</p>
+                            </div>
+                            <img src="/public/img/lijkoramona.svg" alt="lijkoramona">
+                        </div>
+                        <div class="lijko__text" id="ligko_text">
+                            <p>Ліжко Рамона</p>
+                            <p>8 999 грн</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sect4__2_2">
+                    <div id="trig_ligko1">
+                        <a href="/sofas/5">
+                            <div class="sect4__300">
+                                <div>
+                                    <p class="rect4__2">Хіт продаж</p>
+                                    <p class="rect4__2_1">Акція</p>
+                                </div>
+                                <img src="/public/img/lijkochester.svg" alt="lijkochester">
+                            </div>
+                            <div class="lijko__text" id="ligko_text1">
+                                <p>Ліжко Честер</p>
+                                <p class="lijko__text_2" id="ligko_text1_2">8 999 грн</p>
+                                <p class="lijko__text_1" id="ligko_text1_3">8 999 грн</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="sect4__2_3">
+                    <div id="trig_ligko">
+                        <a href="/sofas/6">
+                            <div class="sect4__300">
+                                <img src="/public/img/lijkotiajkiluxe.svg" alt="lijkotiajkiluxe">
+                            </div>
+                            <div class="lijko__text" id="ligko_text">
+                                <p>Ліжко Венеція люкс</p>
+                                <p>8 999 грн</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="sect4__2">
+                <div id="trig_ligko">
+                    <a href="/sofas/4">
+                        <div class="sect4__300">
+                            <div class="rect4__2">
+                                <p>Новинка</p>
+                            </div>
+                            <img src="/public/img/lijkoukraine.svg" alt="lijkoukraine">
+                        </div>
+                        <div class="lijko__text" id="ligko_text">
+                            <p>Ліжко Імперія</p>
+                            <p>8 999 грн</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="sect4__2_3">
+                    <div id="trig_ligko">
+                        <a href="/sofas/3">
+                            <div class="sect4__300">
+                                <img src="/public/img/lijkoadele.svg" alt="lijkoadele">
+                            </div>
+                            <div class="lijko__text" id="ligko_text">
+                                <p>Ліжко Адель</p>
+                                <p>8 999 грн</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="sect4__2_2">
+                    <div id="trig_ligko1">
+                        <a href="/sofas/2">
+                            <div class="sect4__300">
+                                <div>
+                                    <p class="rect4__2">Хіт продаж</p>
+                                    <p class="rect4__2_1">Акція</p>
+                                </div>
+                                <img src="/public/img/lijkoatlant.svg" alt="lijkoatlant">
+                            </div>
+                            <div class="lijko__text" id="ligko_text1">
+                                <p>Ліжко Атлант</p>
+                                <p class="lijko__text_2" id="ligko_text1_2">8 999 грн</p>
+                                <p class="lijko__text_1" id="ligko_text1_3">8 999 грн</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" style="text-decoration:none ;">
+                <div class="sect4__2_1">
+                    <p>В каталог</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="sect5">
+            <div class="sect5__1">
+                <div class="sect4_1">
+                    <div class="rect3"></div>
+                    <p>Про нас</p>
+                </div>
+            </div>
+            <div class="sect5__2">
+                <div class="sect5_1">
+                    <div class="sect5_1_1">
+                        <p style="margin-top: 50px">
+                            <span class="furniture">"Furniture"</span> – "Lorem ipsum dolor sit amet, consectetur
+                            adipiscing elit, sed do eiusmod
+                            tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation
+                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                            reprehenderit
+                            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </p>
+                        <p class="psect5_1_1">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+                            in
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                            cupidatat
+                            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                        </p>
+                        <p class="psect5_1_1">
+                            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                            ullamco
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                        </p>
+                    </div>
+                    <div class="sect5_1_1_1"></div>
+                </div>
+                <img src="/public/img/sect5img.png" class="sect5img" alt="Image">
+            </div>
+        </div>
+
+        <div class="sect6">
+            <div class="sect6_1">
+                <div class="sect4_1-6">
+                    <div class="rect3"></div>
+                    <p>Залишились питання?</p>
+                </div>
+            </div>
+            <div class="sect6_2">
+                <img src="/public/img/sect6_domik.png" alt="Kvartirka" class="sect6img">
+                <div class="sect6_4">
+                    <div class="sect6_palkag"></div>
+                    <div class="windowkons">
+                        <p class="wind_1">Замовте консультацію</p>
+                        <form class="form1">
+                            <input type="text" id="namew" placeholder="Введіть ім'я">
+                        </form>
+                        <form class="form1">
+                            <input type="text" id="namew" placeholder="Номер телефону">
+                        </form>
+                        <button class="btn6">
+                            Відправити
+                        </button>
+                        <p class="zaiavka">
+                            Залиште заявку або телефонуйте за номером <span class="zaiavkanomer">(099) 111 22 33</span>,
+                            і наш менеджер звяжеться з вами для кваліфікованої консультації.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include("./parts/svg.ejs")  %>
+    <%- include("./parts/footer.ejs")  %>
+    <script src="/public/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("./parts/linkico.ejs")  %>
+    <title>Furniture | <%= title %></title>
+    <link rel="stylesheet" href="/public/styles/reset.css">
+    <link rel="stylesheet" href="/public/styles/header.css">
+    <link rel="stylesheet" href="/public/styles/footer.css">
+</head>
+
+<body>
+    <%- include("./parts/header.ejs")  %>
+    <hr>
+
+    <div class="container">
+        
+        <% for(i = 0; i < product.length; i++) { %>
+        <% if (product[i].id == pid) { %>
+        <div class="goods1">
+            <a href="#" class="agoods">
+                <div><img class="imageproduct" src="<%= product[i].imgsrc %>"></div>
+                <div><%= product[i].name %></div>
+                <div><%= product[i].title %></div>
+                <div class="price"><%= product[i].price %>₴</div>
+                <div class="instock">В наличии:<%= product[i].instock %></div>
+            </a>
+            <button class="cart" id="<%= product[i].id %>">Додати в кошик</button>
+        </div>
+        <% } %>
+        <% } %>
+    </div>
+
+    <%- include("./parts/svg.ejs")  %>
+    <%- include("./parts/footer.ejs")  %>
+    <script src="/public/storage.js"></script>
+</body>
+
+</html>

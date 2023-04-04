@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture | <%= title %></title>
+    <%- include("./parts/linkico.ejs") %>
+    <link rel="stylesheet" href="/public/styles/styleadmin.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="nav">
+          <div class="header_2_2">
+            <img src="/public/img/FLogo.svg" alt="FLogo" />
+            <p>Furniture admin panel</p>
+          </div>
+          <div class="header_1_2">
+            <ul class="header_1_2_1">
+              <li>
+                <a href="/" style="margin-left: 0px" class="bottomrect1"
+                  >Головна</a
+                >
+              </li>
+              <li><a href="#" class="bottomrect1">АкцІї</a></li>
+              <li><a href="#" class="bottomrect1">Доставка та оплата</a></li>
+              <li><a href="#" class="bottomrect1">Про нас</a></li>
+              <li><a href="#" class="bottomrect1">Контакти</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <hr />
+    <main class="main">
+      <div class="container">
+        <!-- <div class="btn" id="b1">
+          <p>Добавить Категорию</p>
+        </div> -->
+        <div class="btn" id="mybtn"><p>Добавить Товар</p></div>
+      </div>
+    </main>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form action="/admin" method="post" class="forma" enctype="multipart/form-data">
+          <h2>Product</h2>
+          <div class="inputBox">
+            <span>Тип товара</span>
+            <select name="type">
+              <option value="Диван">Диван</option>
+              <option value="Ліжко">Ліжко</option>
+              <option value="Крісло">Крісло</option>
+              <option value="Комод">Комод</option>
+              <option value="Шафа">Шафа</option>
+              <option value="Кухня">Кухня</option>
+            </select>
+          </div>
+          <div class="inputBox">
+            <span>Name</span>
+            <input type="text" name="name">
+          </div>
+          <div class="inputBox">
+            <span>Price</span>
+            <input type="number" name="price">
+          </div>
+          <div class="inputBox">
+            <span>Title</span>
+            <input type="title" name="title">
+          </div>
+          <div class="inputBox">
+            <span>In Stock</span>
+            <input type="number" name="instock">
+          </div>
+          <div class="inputBox">
+            <span>Img</span>
+            <input type="file" name="img" accept="image/jpeg ,image/x-png" placeholder="Select file">
+          </div>
+
+          <input type="submit" value="Добавить в БД">
+        </form>
+      </div>
+    </div>
+
+    <script src="/public/modal.js"></script>
+  </body>
+</html>

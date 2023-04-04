@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Furniture | <%= title %></title>
+    <%- include("./parts/linkico.ejs")  %>
+    <link rel="stylesheet" href="/public/styles/reset.css">
+    <link rel="stylesheet" href="/public/styles/footer.css">
+    <link rel="stylesheet" href="/public/styles/stylecart.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="header_2_2">
+                    <img src="/public/img/FLogo.svg" alt="FLogo">
+                    <p>Furniture Cart Page</p>
+                </div>
+                <div class="header_1_2">
+                    <ul class="header_1_2_1">
+                        <li><a href="/" style="margin-left: 0px ;" class="bottomrect1">Головна</a></li>
+                        <li><a href="#" class="bottomrect1">АкцІї</a></li>
+                        <li><a href="#" class="bottomrect1">Доставка та оплата</a></li>
+                        <li><a href="#" class="bottomrect1">Про нас</a></li>
+                        <li><a href="#" class="bottomrect1">Контакти</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main class="main">
+        <div class="container">
+            <div class="products">
+            </div>
+            <div class="block1">
+                <div class="priceall">
+                </div>
+                <div class="buybtn" id="mybtn">Придбати</div>
+            </div>
+        </div>
+    </main>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modalwin">
+                <input type="email" name="" id="">
+            </div>
+            
+        </div>
+    </div>
+    <%- include("./parts/svg.ejs")  %>
+    <%- include("./parts/footer.ejs")  %>
+    <script src="/public/cart.js"></script>
+    <script src="/public/modal.js"></script>
+    <!-- <script src="/public/storage.js"></script> -->
+</body>
+
+</html>

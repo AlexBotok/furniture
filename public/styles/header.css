@@ -1,0 +1,258 @@
+.container{
+    width: 1818px;
+    margin: 0 auto;
+}
+
+.header_1 {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_1_1 {
+    display: flex;
+    align-items: center;
+}
+
+.header_1_1 p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+    color: #1E2E36;
+}
+
+.header_1_1 a {
+    text-decoration: none;
+}
+
+.header_1_1 a {
+    padding: 0px 0px 0px 5px;
+}
+
+.header_1_1 a:nth-child(5) {
+    padding: 0px 0px 0px 0px;
+}
+
+.header_1_1 a:nth-child(6) {
+    padding: 0px 0px 0px 0px;
+}
+
+.header_bottom img {
+    padding: 0px 5px 0px 50px;
+}
+
+.hovphone {
+    transition: 0.5s ease;
+}
+
+.hovphone:hover {
+    transform: rotate(90deg);
+    transition: 0.5s ease;
+}
+
+.hov_menu1 {
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.hov_menu1 li {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    width: 250px;
+    height: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    background-color: #1E2E36;
+    transition: 0.5s ease;
+}
+
+.header_1_2_1 {
+    display: flex;
+    align-items: center;
+}
+
+.header_1_2_1 a {
+    text-decoration: none;
+}
+
+.header_1_2_1 a {
+    position: relative;
+    margin-left: 15px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #1E2E36;
+}
+
+.bottomrect1::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    bottom: 1px;
+    left: 0;
+    height: 2px;
+    background-color: #44C697;
+    transition: 0.5s ease;
+}
+
+.bottomrect1:hover::after {
+    width: 100%;
+}
+
+.header_hr {
+    margin: 10px 0px 0px 0px;
+    width: 100%;
+    height: 1px;
+    left: 0px;
+    right: 0px;
+    background-color: rgb(30, 46, 54, 0.6);
+}
+
+.header_2 {
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header_2_1_1 {
+    display: flex;
+    align-items: center;
+}
+
+.header_2_1_1 a {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #1E2E36;
+}
+
+.header_2_1_2_1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+}
+
+.header_2_1_2_1 svg {
+    padding-left: 3px;
+}
+
+.header_2_1_2 {
+    margin-left: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header_2_1_2 svg {
+    padding-left: 3px;
+}
+
+.header_2_2 {
+    display: flex;
+    align-items: center;
+}
+
+.header_2_2 p {
+    padding-left: 15px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+    color: #1E2E36;
+}
+
+.header_2_2 p::first-letter {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+    color: #44C697;
+}
+
+.header_2_3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header_2_3_1 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #1E2E36;
+    text-decoration: none;
+}
+
+.header_2_3 img {
+    padding-right: 5px;
+}
+
+.header_2_3 a {
+    text-decoration: none;
+}
+
+.header_2_3_2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 278px;
+    height: 51px;
+    background: #44C697;
+    border-radius: 3px;
+    margin-left: 30px;
+}
+
+.header_2_3_3 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.header_flex_dir {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 35px;
+}
+
+@media (max-width: 2560px) {
+    .container {
+        width: 1818px;
+    }
+}
+
+@media (max-width: 1920px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1440px) {
+
+}
+
+@media screen and (max-width: 1024px) {
+    
+}
+
+@media screen and (max-width: 575px) {
+.container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}

@@ -1,0 +1,134 @@
+.footer {
+    margin-top: 89px;
+    background: url(/public/img/футер.png) no-repeat center top / cover;
+}
+
+.header_2_2_footer {
+    padding-top: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.header_2_2_footer p {
+    padding-left: 15px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+    color: #FFFFFF;
+}
+
+.header_2_2_footer p::first-letter {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 125%;
+    color: #44C697;
+}
+
+.katalog {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.katalog li {
+    margin-top: 15px;
+}
+
+.katalog li::first-letter {
+    color: #44C697;
+}
+
+.katalog1 {
+    margin-top: 35px;
+}
+
+.footer_2_2 {
+    display: flex;
+}
+
+.katalog2 {
+    margin-top: 35px;
+    margin-left: 55px;
+}
+
+.katalog3 {
+    margin-top: 35px;
+    margin-left: 87px;
+}
+
+.katalog3 a {
+    text-decoration: none;
+}
+
+.katalog3_1 li {
+    display: flex;
+    margin-top: 15px;
+}
+
+.katalog3 p {
+    margin-left: 5px;
+}
+
+.katalog3_1 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 125%;
+    color: #FFFFFF;
+}
+
+.katalog3_2 li {
+    margin-top: 15px;
+    display: flex;
+    align-items: flex-start;
+}
+
+.katalog3_2 p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 125%;
+    text-transform: uppercase;
+    color: #44C697;
+}
+
+.katalog3_2 div {
+    display: flex;
+    flex-direction: column;
+}
+
+.socialocki {
+    margin-top: 30px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 125%;
+    color: #FFFFFF;
+}
+
+.socialocki p {
+    margin-left: 0px;
+}
+
+.socialocki img {
+    margin-left: 5px;
+}
+
+.socialocki_1 {
+    margin-top: 5px;
+}
+
+.tob {
+    margin-top: 100px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: #FFFFFF;
+    padding-bottom: 15px;
+}
