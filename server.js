@@ -222,5 +222,15 @@ app.get('/cart.json', (req, res) => {
         });
 });
 
+const createPath = (page) => path.resolve(__dirname, 'views', `${page}.ejs`)
+
+app.use((req, res) => {
+    const title = 'Error';
+    res
+        .status(404)
+        .render(createPath('error'), { errorCode: 404, title })
+})
+
+
 
 start()
