@@ -243,15 +243,14 @@ body {
     background-color: rgba(0,0,0,0.4); /*Черный с непрозрачностью */
   }
   
-  .close {
+  .close, .close1 {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  .close:hover, .close:focus, .close1:hover, .close1:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
@@ -260,7 +259,7 @@ body {
   .modal-content{
     background-color:#fff;
     width: 50%;
-    height: 50%;
+    height: auto;
     margin: 0 auto;
   }
   

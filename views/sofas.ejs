@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/public/styles/stylesofas.css">
     <link rel="stylesheet" href="/public/styles/footer.css">
 </head>
+
 <body>
     <%- include("./parts/header.ejs")  %>
     <section class="section" id="section">
@@ -30,62 +31,105 @@
                         </svg>
                     </div>
                     <div class="linef1"></div>
-                    <div class="filter1" id="f0">
+                    <div class="filter1" id="f01">
                         <div class="filflex">
-                            <p>Виробник</p>
+                            <p class="unselectable">Виробник</p>
                             <svg class="filtersvg">
                                 <use href="#buttondown1"></use>
                             </svg>
                         </div>
                         <div class="filflex1">
-                            <!-- <div id="f0f" class="inviz" checked="false">AmbasaDoor</div>
-                            <div class="checkbox"><img src="/public/img/true.svg" alt="true"></div> -->
+                            <% for(i = 1; i < brand.length; i++) { %>
+                            <div class="checkbox">
+                                <p class="brand unselectable"><%= brand[i].brand %></p><img class="data-img"
+                                    src="/public/img/true.svg" alt="true">
+                            </div>
+                            <% } %>
                         </div>
-
                     </div>
-                    <div class="filter1" id="f1">
+                    <div class="filter1">
                         <div class="filflex">
-                            <p>Механізм</p>
+                            <p class="unselectable">Механізм</p>
                             <svg class="filtersvg">
                                 <use href="#buttondown1"></use>
                             </svg>
                         </div>
+                        <div class="filflex1">
+                            <% for(i = 1; i < mechanism.length; i++) { %>
+                            <div class="checkbox">
+                                <p class="mechanism unselectable"><%= mechanism[i].mechanism %></p><img class="data-img"
+                                    src="/public/img/true.svg" alt="true">
+                            </div>
+                            <% } %>
+                        </div>
                     </div>
-                    <div class="filter1" id="f2">
+                    <div class="filter1">
                         <div class="filflex">
-                            <p>Наповнювач</p>
+                            <p class="unselectable">Наповнювач</p>
                             <svg class="filtersvg">
                                 <use href="#buttondown1"></use>
                             </svg>
                         </div>
+                        <div class="filflex1">
+                            <% for(i = 1; i < extender.length; i++) { %>
+                            <div class="checkbox">
+                                <p class="extender unselectable"><%= extender[i].extender %></p><img class="data-img"
+                                    src="/public/img/true.svg" alt="true">
+                            </div>
+                            <% } %>
+                        </div>
                     </div>
-                    <div class="filter1" id="f3">
+                    <div class="filter1">
                         <div class="filflex">
-                            <p>Каркас</p>
+                            <p class="unselectable">Каркас</p>
                             <svg class="filtersvg">
                                 <use href="#buttondown1"></use>
                             </svg>
                         </div>
+                        <div class="filflex1">
+                            <% for(i = 1; i < frame.length; i++) { %>
+                            <div class="checkbox">
+                                <p class="frame unselectable"><%= frame[i].frame %></p><img class="data-img"
+                                    src="/public/img/true.svg" alt="true">
+                            </div>
+                            <% } %>
+                        </div>
                     </div>
-                    <div class="filter1" id="f4">
+                    <div class="filter1">
                         <div class="filflex">
-                            <p>Короб</p>
+                            <p class="unselectable">Короб</p>
                             <svg class="filtersvg">
                                 <use href="#buttondown1"></use>
                             </svg>
                         </div>
+                        <div class="filflex1">
+                            <% for(i = 1; i < box.length; i++) { %>
+                            <div class="checkbox">
+                                <p class="box unselectable"><%= box[i].box %></p><img class="data-img"
+                                    src="/public/img/true.svg" alt="true">
+                            </div>
+                            <% } %>
+                        </div>
                     </div>
-                    <div class="filter1" id="f5">
+                    <div class="filter1">
                         <div class="filflex">
-                            <p>Місто</p>
+                            <p class="unselectable">Місто</p>
                             <svg class="filtersvg">
                                 <use href="#buttondown1"></use>
                             </svg>
                         </div>
+                        <div class="filflex1">
+                            <% for(i = 1; i < city.length; i++) { %>
+                            <div class="checkbox">
+                                <p class="city unselectable"><%= city[i].city %></p><img class="data-img"
+                                    src="/public/img/true.svg" alt="true">
+                            </div>
+                            <% } %>
+                        </div>
                     </div>
-                    <div class="filter1" id="f6">
+                    <div class="filter1">
                         <div class="filflex">
-                            <p>Ціна</p>
+                            <p class="unselectable">Ціна</p>
                             <svg class="filtersvg">
                                 <use href="#buttondown1"></use>
                             </svg>

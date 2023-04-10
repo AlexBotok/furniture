@@ -35,6 +35,36 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: false
+    },
+    brand: {
+        type: String,
+        required: true,
+        unique: false
+    },
+    mechanism:{
+        type: String,
+        required: true,
+        unique: false
+    },
+    extender:{
+        type: String,
+        required: true,
+        unique: false
+    },
+    frame:{
+        type: String,
+        required: true,
+        unique: false
+    },
+    box:{
+        type: String,
+        required: true,
+        unique: false
+    },
+    city:{
+        type: String,
+        required: true,
+        unique: false 
     }
 
 }, {

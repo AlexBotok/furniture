@@ -1,89 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Furniture | <%= title %></title>
-    <%- include("./parts/linkico.ejs") %>
-    <link rel="stylesheet" href="/public/styles/styleadmin.css" />
-  </head>
-  <body>
-    <header class="header">
-      <div class="container">
-        <div class="nav">
-          <div class="header_2_2">
-            <img src="/public/img/FLogo.svg" alt="FLogo" />
-            <p>Furniture admin panel</p>
-          </div>
-          <div class="header_1_2">
-            <ul class="header_1_2_1">
-              <li>
-                <a href="/" style="margin-left: 0px" class="bottomrect1"
-                  >Головна</a
-                >
-              </li>
-              <li><a href="#" class="bottomrect1">АкцІї</a></li>
-              <li><a href="#" class="bottomrect1">Доставка та оплата</a></li>
-              <li><a href="#" class="bottomrect1">Про нас</a></li>
-              <li><a href="#" class="bottomrect1">Контакти</a></li>
-            </ul>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furniture | <%= title %></title>
+  <%- include("./parts/linkico.ejs") %>
+  <link rel="stylesheet" href="/public/styles/styleadmin.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="nav">
+        <div class="header_2_2">
+          <img src="/public/img/FLogo.svg" alt="FLogo" />
+          <p>Furniture admin panel</p>
+        </div>
+        <div class="header_1_2">
+          <ul class="header_1_2_1">
+            <li>
+              <a href="/" style="margin-left: 0px" class="bottomrect1">Головна</a>
+            </li>
+            <li><a href="#" class="bottomrect1">АкцІї</a></li>
+            <li><a href="#" class="bottomrect1">Доставка та оплата</a></li>
+            <li><a href="#" class="bottomrect1">Про нас</a></li>
+            <li><a href="#" class="bottomrect1">Контакти</a></li>
+          </ul>
         </div>
       </div>
-    </header>
-    <hr />
-    <main class="main">
-      <div class="container">
-        <!-- <div class="btn" id="b1">
-          <p>Добавить Категорию</p>
-        </div> -->
-        <div class="btn" id="mybtn"><p>Добавить Товар</p></div>
+    </div>
+  </header>
+  <hr />
+  <main class="main">
+    <div class="container">
+      <div class="btn" id="mybtn">
+        <p>Добавить Товар</p>
       </div>
-    </main>
-
-    <div id="myModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <form action="/admin" method="post" class="forma" enctype="multipart/form-data">
-          <h2>Product</h2>
-          <div class="inputBox">
-            <span>Тип товара</span>
-            <select name="type">
-              <option value="Диван">Диван</option>
-              <option value="Ліжко">Ліжко</option>
-              <option value="Крісло">Крісло</option>
-              <option value="Комод">Комод</option>
-              <option value="Шафа">Шафа</option>
-              <option value="Кухня">Кухня</option>
-            </select>
-          </div>
-          <div class="inputBox">
-            <span>Name</span>
-            <input type="text" name="name">
-          </div>
-          <div class="inputBox">
-            <span>Price</span>
-            <input type="number" name="price">
-          </div>
-          <div class="inputBox">
-            <span>Title</span>
-            <input type="title" name="title">
-          </div>
-          <div class="inputBox">
-            <span>In Stock</span>
-            <input type="number" name="instock">
-          </div>
-          <div class="inputBox">
-            <span>Img</span>
-            <input type="file" name="img" accept="image/jpeg ,image/x-png" placeholder="Select file">
-          </div>
-
-          <input type="submit" value="Добавить в БД">
-        </form>
+      <div class="btn" id="mybtn1">
+        <p>Добавить Категорию</p>
       </div>
     </div>
+  </main>
 
-    <script src="/public/modal.js"></script>
-  </body>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form action="/admin-product" method="post" class="forma" enctype="multipart/form-data">
+        <h2>Product</h2>
+        <div class="inputBox">
+          <span>Тип товара</span>
+          <select name="type">
+            <option>Диван</option>
+            <option>Ліжко</option>
+            <option>Крісло</option>
+            <option>Комод</option>
+            <option>Шафа</option>
+            <option>Кухня</option>
+          </select>
+        </div>
+        <div class="inputBox">
+          <span>Name</span>
+          <input type="text" name="name">
+        </div>
+        <div class="inputBox">
+          <span>Price</span>
+          <input type="number" name="price">
+        </div>
+        <div class="inputBox">
+          <span>Title</span>
+          <input type="title" name="title">
+        </div>
+        <div class="inputBox">
+          <span>In Stock</span>
+          <input type="number" name="instock">
+        </div>
+        <div class="inputBox">
+          <span>Img</span>
+          <input type="file" name="img" accept="image/jpeg ,image/x-png" placeholder="Select file">
+        </div>
+        <select name="brand">
+          <% for(i = 0; i < brand.length; i++) { %>
+          <option><%= brand[i].brand %></option>
+          <% } %>
+        </select>
+        <select name="mechanism">
+          <% for(i = 0; i < mechanism.length; i++) { %>
+          <option><%= mechanism[i].mechanism %></option>
+          <% } %>
+        </select>
+        <select name="extender">
+          <% for(i = 0; i < extender.length; i++) { %>
+          <option><%= extender[i].extender %></option>
+          <% } %>
+        </select>
+        <select name="frame">
+          <% for(i = 0; i < frame.length; i++) { %>
+          <option><%= frame[i].frame %></option>
+          <% } %>
+        </select>
+        <select name="box">
+          <% for(i = 0; i < box.length; i++) { %>
+          <option><%= box[i].box %></option>
+          <% } %>
+        </select>
+        <select name="city">
+          <% for(i = 0; i < city.length; i++) { %>
+          <option><%= city[i].city %></option>
+          <% } %>
+        </select>
+        <input type="submit" value="Добавить в БД">
+      </form>
+    </div>
+  </div>
+
+  <div id="myModal1" class="modal">
+    <div class="modal-content">
+      <span class="close1">&times;</span>
+      <form action="/admin-brand" method="post" class="forma">
+        <h2>Filters</h2>
+        <div class="inputBox">
+          <span>Виробник</span>
+          <input type="text" name="brand">
+        </div>
+        <input type="submit" value="Добавить в БД">
+      </form>
+      <form action="/admin-mechanism" method="post" class="forma">
+        <div class="inputBox">
+          <span>Механізм</span>
+          <input type="text" name="mechanism">
+        </div>
+        <input type="submit" value="Добавить в БД">
+      </form>
+      <form action="/admin-extender" method="post" class="forma">
+        <div class="inputBox">
+          <span>Наповнювач</span>
+          <input type="text" name="extender">
+        </div>
+        <input type="submit" value="Добавить в БД">
+      </form>
+      <form action="/admin-frame" method="post" class="forma">
+        <div class="inputBox">
+          <span>Каркас</span>
+          <input type="text" name="frame">
+        </div>
+        <input type="submit" value="Добавить в БД">
+      </form>
+      <form action="/admin-box" method="post" class="forma">
+        <div class="inputBox">
+          <span>Короб</span>
+          <input type="text" name="box">
+        </div>
+        <input type="submit" value="Добавить в БД">
+      </form>
+      <form action="/admin-city" method="post" class="forma">
+        <div class="inputBox">
+          <span>Місто</span>
+          <input type="text" name="city">
+        </div>
+        <input type="submit" value="Добавить в БД">
+      </form>
+
+    </div>
+  </div>
+
+  <script src="/public/modal.js"></script>
+</body>
+
 </html>
