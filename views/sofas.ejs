@@ -40,9 +40,10 @@
                         </div>
                         <div class="filflex1">
                             <% for(i = 1; i < brand.length; i++) { %>
-                            <div class="checkbox">
-                                <p class="brand unselectable"><%= brand[i].brand %></p><img class="data-img"
-                                    src="/public/img/true.svg" alt="true">
+                            <div class="category">
+                                <p class="brand unselectable"><%= brand[i].brand %></p>
+                                <input class="checkbox" type="checkbox" data-filter="brand"
+                                    data-value="<%= brand[i].brand %>">
                             </div>
                             <% } %>
                         </div>
@@ -56,9 +57,10 @@
                         </div>
                         <div class="filflex1">
                             <% for(i = 1; i < mechanism.length; i++) { %>
-                            <div class="checkbox">
-                                <p class="mechanism unselectable"><%= mechanism[i].mechanism %></p><img class="data-img"
-                                    src="/public/img/true.svg" alt="true">
+                            <div class="category">
+                                <p class="mechanism unselectable"><%= mechanism[i].mechanism %></p>
+                                <input class="checkbox" type="checkbox" data-filter="mechanism"
+                                    data-value="<%= mechanism[i].mechanism %>">
                             </div>
                             <% } %>
                         </div>
@@ -72,9 +74,10 @@
                         </div>
                         <div class="filflex1">
                             <% for(i = 1; i < extender.length; i++) { %>
-                            <div class="checkbox">
-                                <p class="extender unselectable"><%= extender[i].extender %></p><img class="data-img"
-                                    src="/public/img/true.svg" alt="true">
+                            <div class="category">
+                                <p class="extender unselectable"><%= extender[i].extender %></p>
+                                <input class="checkbox" type="checkbox" data-filter="extender"
+                                    data-value="<%= extender[i].extender %>">
                             </div>
                             <% } %>
                         </div>
@@ -88,9 +91,10 @@
                         </div>
                         <div class="filflex1">
                             <% for(i = 1; i < frame.length; i++) { %>
-                            <div class="checkbox">
-                                <p class="frame unselectable"><%= frame[i].frame %></p><img class="data-img"
-                                    src="/public/img/true.svg" alt="true">
+                            <div class="category">
+                                <p class="frame unselectable"><%= frame[i].frame %></p>
+                                <input class="checkbox" type="checkbox" data-filter="frame"
+                                    data-value="<%= frame[i].frame %>">
                             </div>
                             <% } %>
                         </div>
@@ -104,9 +108,10 @@
                         </div>
                         <div class="filflex1">
                             <% for(i = 1; i < box.length; i++) { %>
-                            <div class="checkbox">
-                                <p class="box unselectable"><%= box[i].box %></p><img class="data-img"
-                                    src="/public/img/true.svg" alt="true">
+                            <div class="category">
+                                <p class="box unselectable"><%= box[i].box %></p>
+                                <input class="checkbox" type="checkbox" data-filter="box"
+                                    data-value="<%= box[i].box %>">
                             </div>
                             <% } %>
                         </div>
@@ -120,9 +125,10 @@
                         </div>
                         <div class="filflex1">
                             <% for(i = 1; i < city.length; i++) { %>
-                            <div class="checkbox">
-                                <p class="city unselectable"><%= city[i].city %></p><img class="data-img"
-                                    src="/public/img/true.svg" alt="true">
+                            <div class="category">
+                                <p class="city unselectable"><%= city[i].city %></p>
+                                <input class="checkbox" type="checkbox" data-filter="city"
+                                    data-value="<%= city[i].city %>">
                             </div>
                             <% } %>
                         </div>
@@ -134,19 +140,32 @@
                                 <use href="#buttondown1"></use>
                             </svg>
                         </div>
+                        <div class="filflex1">
+                            <div class="category">
+                                <div class="slider-container">
+                                    <input type="range" min="0" max="10000" step="1" value="0" id="priceSlider"
+                                        style="width: 70px;">
+                                </div>
+                                <p id="priceRange">0 - 10000</p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
                 <div class="productsofa">
                     <% for(i = 0; i < product.length; i++) { %>
                     <% if (product[i].type == "Диван") { %>
-                    <div class="goods1">
+                    <div class="goods1" data-brand="<%= product[i].brand %>"
+                        data-mechanism="<%= product[i].mechanism %>" data-extender="<%= product[i].extender %>"
+                        data-frame="<%= product[i].frame %>" data-box="<%= product[i].box %>"
+                        data-city="<%= product[i].city %>" data-price="<%= product[i].price %>">
                         <a href="sofas/<%= product[i].id %>" class="agoods">
-                            <div><img class="imageproduct" src="<%= product[i].imgsrc %>"></div>
-                            <div><%= product[i].name %></div>
-                            <div><%= product[i].title %></div>
-                            <div class="price"><%= product[i].price %>₴</div>
-                            <div class="instock">В наявності:<%= product[i].instock %></div>
-                            <!-- <div class="brand"><%= product[i].brand %></div> -->
+                            <div style="width: 90%; margin: 0 auto; text-align: center;"><img decoding="async"
+                                    loading="lazy" alt="<%= product[i].name %>" title="<%= product[i].name %>"
+                                    class="imageproduct" src="<%= product[i].imgsrc %>"></div>
+                            <div style="text-align: center;"><%= product[i].name %></div>
+                            <div class="price" style="text-align: center;"><%= product[i].price %>₴</div>
+                            <div class="instock">В наличии:<%= product[i].instock %></div>
                         </a>
                         <button class="cart" id="<%= product[i].id %>">Додати в кошик</button>
                     </div>

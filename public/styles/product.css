@@ -1,0 +1,31 @@
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.image{
+    width: 500px;
+    height: 500px;
+}
+
+.goods1{
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cart{
+    background: #93d1ba;
+    border: 3px solid black;
+    padding: 5px;
+    margin: 2px;
+    font-size: medium;
+    cursor: pointer;
+    width: 500px;
+}

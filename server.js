@@ -15,16 +15,15 @@ const Extender = require('./models/Extender')
 const Frame = require('./models/Frame')
 const Box = require('./models/Box')
 const City = require('./models/City')
-
 const {
     upload,
-    checkImageSize
+    resizeImage
 } = require('./models/upload')
 const {
     verifyToken,
     verifyUserLogin
 } = require('./models/verifyToken')
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 const app = express()
 
 const salt = 10
@@ -41,7 +40,7 @@ mongoose.set('strictQuery', true)
 const start = async () => {
     try {
         await mongoose.connect("mongodb+srv://admin:adminalex@cluster0.on6ri4v.mongodb.net/sitedb")
-        app.listen(port, () => console.log("server started on port 3000"))
+        app.listen(port, () => console.log("server started on port 3001"))
     } catch (e) {
         console.log(e)
     }
@@ -113,7 +112,7 @@ app.post('/admin-product', upload.single('img'), async (req, res) => {
 
         if (name && price && type && title && instock != '') {
             if (req.file) {
-                checkImageSize(req.file.path);
+                resizeImage(req.file.path);
             }
             const response = await Product.create({
                 id,
@@ -435,7 +434,6 @@ app.use((req, res) => {
             title
         })
 })
-
 
 
 start()

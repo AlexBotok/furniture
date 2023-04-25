@@ -2,6 +2,7 @@ const multer = require('multer');
 const moment = require('moment');
 const imageSize = require('image-size');
 const fs = require('fs');
+const sharp = require('sharp');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -14,7 +15,7 @@ const storage = multer.diskStorage({
 })
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimetype === "image/png" || file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
+  if (file.mimetype === "image/jpg" || file.mimetype === "image/jpeg") {
     cb(null, true);
   } else {
     cb(null, false);
@@ -39,14 +40,16 @@ const deleteFile = (filePath) => {
   });
 };
 
-const checkImageSize = (filePath) => {
-  const dimensions = imageSize(filePath);
-  const width = dimensions.width;
-  const height = dimensions.height;
-  if (width > 512 || height > 512) {
+const resizeImage = async (filePath) => {
+  try {
+    const resizedImageBuffer = await sharp(filePath)
+      .resize({ width: 1000, height: 1000, fit: 'cover' })
+      .toBuffer();
+    fs.writeFileSync(filePath, resizedImageBuffer);
+  } catch (err) {
     deleteFile(filePath);
-    throw new Error('Картинка должна быть до 512px x 512px');
+    throw new Error('Не удалось обработать изображение');
   }
 };
 
-module.exports = { upload, checkImageSize };
+module.exports = { upload, resizeImage };

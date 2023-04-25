@@ -1,75 +1,105 @@
 const filters = document.querySelectorAll(".filter1");
 const filflex = document.querySelectorAll(".filflex");
 const filterMap = {
-    brand: filters[0],
-    mechanism: filters[1],
-    extender: filters[2],
-    frame: filters[3],
-    box: filters[4],
-    city: filters[5],
+  brand: filters[0],
+  mechanism: filters[1],
+  extender: filters[2],
+  frame: filters[3],
+  box: filters[4],
+  city: filters[5],
+  price: filters[6],
 };
 const elementCounts = {
-    brand: document.querySelectorAll('.brand').length,
-    mechanism: document.querySelectorAll('.mechanism').length,
-    extender: document.querySelectorAll('.extender').length,
-    frame: document.querySelectorAll('.frame').length,
-    box: document.querySelectorAll('.box').length,
-    city: document.querySelectorAll('.city').length,
+  brand: document.querySelectorAll(".brand").length,
+  mechanism: document.querySelectorAll(".mechanism").length,
+  extender: document.querySelectorAll(".extender").length,
+  frame: document.querySelectorAll(".frame").length,
+  box: document.querySelectorAll(".box").length,
+  city: document.querySelectorAll(".city").length,
+  price: document.querySelectorAll(".slider-container").length,
 };
 
 const handleClick = (type, element) => {
-    const isActive = filterMap[type].classList.contains('active');
-    if (isActive) {
-        filterMap[type].classList.remove('active');
-        filterMap[type].style.height = '35px';
-    } else {
-        filterMap[type].classList.add('active');
-        filterMap[type].style.height = `${elementCounts[type] * 30 + 35}px`;
-    }
+  const isActive = filterMap[type].classList.contains("active");
+  if (isActive) {
+    filterMap[type].classList.remove("active");
+    filterMap[type].style.height = "35px";
+  } else {
+    filterMap[type].classList.add("active");
+    filterMap[type].style.height = `${elementCounts[type] * 30 + 35}px`;
+  }
 };
 
 filflex.forEach((el, i) => {
-    el.addEventListener("click", () => {
-        const type = Object.keys(filterMap)[i];
-        handleClick(type, el);
-    });
+  el.addEventListener("click", () => {
+    const type = Object.keys(filterMap)[i];
+    handleClick(type, el);
+  });
 });
 
-const checkboxes = document.querySelectorAll('.checkbox');
-checkboxes.forEach(function (checkbox) {
-    checkbox.addEventListener('click', function () {
-        const img = checkbox.querySelector('img');
-        if (checkbox.classList.contains('active')) {
-            img.style.opacity = '0';
-            checkbox.classList.remove('active');
-        } else {
-            checkbox.classList.add('active');
-            img.style.opacity = '1';
-        }
-    });
-});
+const checkboxes = document.querySelectorAll(".checkbox");
+const filters1 = {};
 
-// Получаем все чекбоксы брендов
-const brandCheckboxes = document.querySelectorAll('.brand');
+checkboxes.forEach((checkbox) => {
+  checkbox.addEventListener("click", () => {
+    const filter = checkbox.dataset.filter;
+    const value = checkbox.dataset.value;
 
-// Получаем все товары
-const products = document.querySelectorAll('.goods1');
+    if (checkbox.checked) {
+      filters1[filter] = filters1[filter] || [];
+      filters1[filter].push(value);
+    } else {
+      filters1[filter] = filters1[filter].filter((v) => v !== value);
+      if (filters1[filter].length === 0) {
+        delete filters1[filter];
+      }
+    }
 
-// Добавляем обработчики событий на чекбоксы
-brandCheckboxes.forEach(function(checkbox) {
-  checkbox.addEventListener('click', function() {
-    // Получаем значение выбранного чекбокса
-    const brand = this.innerText;
-    console.log(brand)
-    
-    // Перебираем все товары и скрываем те, которые не относятся к выбранному бренду
-    products.forEach(function(product) {
-      const productBrand = product.querySelector('.brand').innerText;
-      if (productBrand !== brand) {
-        product.style.display = 'none';
+    const products = document.querySelectorAll(".goods1");
+
+    products.forEach((product) => {
+      const shouldShow = Object.entries(filters1).every(([filter, values]) => {
+        return values.includes(product.dataset[filter]);
+      });
+
+      if (shouldShow) {
+        product.style.display = "flex";
       } else {
-        product.style.display = 'flex';
+        product.style.display = "none";
       }
     });
+  });
+});
+
+const priceSlider = document.getElementById("priceSlider");
+const priceRange = document.getElementById("priceRange");
+
+priceSlider.addEventListener("input", (event) => {
+  const minPrice = event.target.value;
+  const maxPrice = 10000; // Максимальное значение цены
+  priceRange.textContent = `${minPrice} - ${maxPrice}`;
+
+  // Выполнить фильтрацию товаров по цене
+  const products = document.querySelectorAll(".goods1");
+  products.forEach((product) => {
+    const productPrice = parseInt(product.dataset.price);
+    if (productPrice >= minPrice && productPrice <= maxPrice) {
+      product.style.display = "flex";
+    } else {
+      product.style.display = "none";
+    }
+  });
+});
+
+priceSlider.addEventListener("input", () => {
+  const price = priceSlider.value;
+  const products = document.querySelectorAll(".goods1");
+  products.forEach((product) => {
+    const productPrice = parseInt(product.dataset.price);
+    if (productPrice <= price) {
+      product.style.display = "flex";
+    } else {
+      product.style.display = "none";
+    }
   });
 });

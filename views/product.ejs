@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/public/styles/reset.css">
     <link rel="stylesheet" href="/public/styles/header.css">
     <link rel="stylesheet" href="/public/styles/footer.css">
+    <link rel="stylesheet" href="/public/styles/product.css">
 </head>
 
 <body>
@@ -17,17 +18,14 @@
     <hr>
 
     <div class="container">
-        
+
         <% for(i = 0; i < product.length; i++) { %>
         <% if (product[i].id == pid) { %>
         <div class="goods1">
-            <a href="#" class="agoods">
-                <div><img class="imageproduct" src="<%= product[i].imgsrc %>"></div>
-                <div><%= product[i].name %></div>
-                <div><%= product[i].title %></div>
-                <div class="price"><%= product[i].price %>₴</div>
-                <div class="instock">В наличии:<%= product[i].instock %></div>
-            </a>
+            <div class="image"><img class="imageproduct" src="<%= product[i].imgsrc %>"></div>
+            <div><%= product[i].name %></div>
+            <div class="price"><%= product[i].price %>₴</div>
+            <div class="instock">В наличии:<%= product[i].instock %></div>
             <button class="cart" id="<%= product[i].id %>">Додати в кошик</button>
         </div>
         <% } %>
