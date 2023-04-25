@@ -16,7 +16,30 @@
 ## Home page
 ![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/1.png?raw=true)
 
-![Login](https://github.com/AlexBotok/furniture/blob/master/screenshots/10.png?raw=true)
+## Slider
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/2.png?raw=true)
+## Svg work
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/3.png?raw=true)
+## Hover catalog
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/4.png?raw=true)
+## About
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/5.png?raw=true)
+## Questions
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/6.png?raw=true)
+## Footer
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/7.png?raw=true)
+## Goods page
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/8.png?raw=true)
+## Cart page
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/9.png?raw=true)
+## Login page
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/10.png?raw=true)
+## Admin page
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/11.png?raw=true)
+## Modal window
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/12.png?raw=true)
+## Product page
+![Home page](https://github.com/AlexBotok/furniture/blob/master/screenshots/13.png?raw=true)
 
 
 
